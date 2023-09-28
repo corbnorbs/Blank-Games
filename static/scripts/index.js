@@ -7,7 +7,7 @@ function search(site) {
       scope: __uv$config.prefix,
     })
     .then(() => {
-      let url = site.value.trim();
+      let url = site.trim();
       if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
       else if (!(url.startsWith("https://") || url.startsWith("http://")))
         url = "http://" + url;
