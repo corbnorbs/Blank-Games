@@ -22,7 +22,7 @@ games = {
     "Rocket Boy Royale": "https://rocketbotroyale2.winterpixel.io/",
     "Run 3": "https://www.coolmathgames.com/0-run-3/play",
     "Ships 3D": "https://yp3d.com/ships3d/",
-    "Smashkarts.io": "https://smashkarts.io/",
+    "Smash Karts": "https://smashkarts.io/",
     "Sugar Sugar": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fsugar-sugar.xml",
     "Tetris": "https://www.lumpty.com/amusements/Games/Tetris/tetris.html",
     "Time Shooter 2": "https://watchdocumentaries.com/wp-content/uploads/games/time-shooter-2/",
