@@ -54,7 +54,7 @@ h1 {
   background-color: white;
 }
 
-.grid-item:first-child, .grid-item:nth-child(2), .grid-item:nth-child(3), .grid-item:nth-child(4) {
+.grid-item:first-child, .grid-item:nth-child(2) {
   flex-basis:100%;
 }
 
