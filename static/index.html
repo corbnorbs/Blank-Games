@@ -28,9 +28,8 @@
 
     <script src="scripts/index.js"></script>
 
+    <script type="text/javascript" src="games.json"></script>
     <script>
-    const response = await fetch("games.json");
-    const games = await response.json();
     for(let i = 0; i < Object.keys(games).length; i++) {
       let obj = games[Object.keys(games)[i]];
       
