@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Blank</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="iframed.js"></script>
+  <div id="holder" class="holder">
+    <div id="tab-1" class="tab selected" onclick="console.log('Clicked!')">
+      <div id="text-1" class="text" title="New Tab">New Tab</div>
+      <iframe class="frame" id="frame-1" allowfullscreen src="https://interstellar-5ugi.onrender.com/" onload="setTitle()"></iframe>
+      <div id="close-1" class="close">
+        <h3 class="closeText" id="h3-1">X</h3>
+      </div>
+    </div>
+    <div id="newTab" onclick="addTab('New Tab', 'https://interstellar-5ugi.onrender.com/')" class="newTab">
+      <h2 class="newTabText">+</h2>
+    </div>
+  </div>
+  <h1 id="test" class="Name"></h1>
+  <script src="script.js"></script>
+</body>
+</html>

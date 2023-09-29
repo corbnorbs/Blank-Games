@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+html {
+  background-color: black;
+}
+
+body {
+  position: absolute;
+  font-family: "Lexend", sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #FCFCFD;
+  margin: 0%;
+}
+
+.holder {
+  position: absolute;
+  background-color: #000000;
+  color: #000000;
+  width: 100vw;
+  height: 40px;
+  align-items: center;
+  top: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tab {
+  color: #FCFCFD;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 38px;
+  width: 200px;
+  user-select: none;
+  border: 2px solid #000000;
+  border-width: 2px 2px 0px 2px;
+  transition: 0.5s;
+}
+
+.frame {
+  position: fixed;
+  height: 96vh;
+  width: 100vw;
+  top: 40px;
+  left: 0px;
+  background-color: #17171A;
+  display: block;
+  background: black;
+  border: 2px solid #FFFFFF;
+  border-width: 2px 0px 0px 0px;
+}
+
+.text {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 75%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  left: 10%;
+}
+
+.newTab {
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-left: 10px;
+  border-radius: 100%;
+  transition: 0.5s;
+  user-select: none;
+}
+
+.newTab:hover {
+  background-color: #FFFFFF20;
+}
+
+path {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.selected {
+  border-color: #FFFFFF;
+  box-shadow: 0px 0px 10px #17171A;
+}
+
+.close {
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.close:hover {
+  background-color: #FFFFFF20;
+}
+
+.newTabText {
+  position: relative;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  top: 0;
+  width: fit-content;
+  left: 50%;
+  top: -12.5%;
+  transform: translate(-50%);
+}
+
+.closeText {
+  position: relative;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  left: 25%;
+}
+
+.Name {
+  position: fixed;
+  top: 0%;
+  right: 1%;
+  margin: 0;
+}
