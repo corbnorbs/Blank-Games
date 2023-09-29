@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Oxygen+Mono&family=Quicksand:wght@700&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+body,html {
+  text-align: center;
+  background-color: black;
+}
+
+button {
+  background-color: lightgrey;
+  border: 1px solid white;
+}
+
+h1 {
+  font-style: bold;
+  font-size: 100px;
+  font-family: 'Lexend', sans-serif;
+  color: white;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.grid {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  gap:5px;
+}
+
+.adsbygoogle {
+  flex-basis:100%;
+}
+
+.grid-item {
+  border-radius: 5px;
+  height: 100px;
+  font-size: 25px;
+  font-family: 'Lexend', sans-serif;
+  font-style: bold;
+  transition: 0.5s;
+  flex: 45%;
+}
+
+.grid-item:hover {
+  border-radius: 2px;
+  background-color: white;
+}
+
+.grid-item:first-child, .grid-item:nth-child(2), .grid-item:nth-child(3), .grid-item:nth-child(4) {
+  flex-basis:100%;
+}
+
+.adsbygoogle {
+  flex-basis: 100%;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}

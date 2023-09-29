@@ -1,5 +1,5 @@
 self.__uv$config = {
-    prefix: '/astronomy/',
+    prefix: '/search/',
     bare: '/outerspace/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
