@@ -9,7 +9,7 @@ app.use(express.json({ limiy: '1mb' }));
 const database = new Datastore('database.db');
 database.loadDatabase();
 
-app.get('/api', (request,response) => {
+app.get('/static/api', (request,response) => {
   database.find({}, (err, data) => {
     if (err) {
       response.end();

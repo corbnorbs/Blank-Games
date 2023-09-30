@@ -10,7 +10,7 @@
       getData();
       
       async function getData() {
-        const response = await fetch('/api');
+        const response = await fetch('/static/api');
         const data = await response.json();
 
         for (item of data) {
