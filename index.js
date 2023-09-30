@@ -21,6 +21,7 @@ app.use(
   })
 );
 
+
 app.use(express.static(path.join(__dirname, "static")));
 
 const routes = [
