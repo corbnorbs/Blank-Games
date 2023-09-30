@@ -1,5 +1,5 @@
 services:
   - type: web
-    name: interstellar
+    name: blank-games
     env: docker
     plan: free
