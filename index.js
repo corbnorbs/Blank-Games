@@ -1,9 +1,13 @@
 import express from "express";
 import http from "node:http";
+import Datastore from 'nedb'
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
 dotenv.config();
+
+const database = new Datastore('database.db');
+database.loadDatabase();
 
 const __dirname = process.cwd();
 const server = http.createServer();
@@ -37,9 +41,27 @@ routes.forEach((route) => {
   });
 });
 
-app.get("/*", (req, res) => {
-  res.redirect("/404");
+app.get('/api', (request,response) => {
+  database.find({}, (err, data) => {
+    if (err) {
+      response.end();
+      return;
+    }
+    response.json(data);
+  });
 });
+
+app.post('/api', (request, response) => {
+  const data = request.body;
+  const timestamp = Date.now();
+  data.timestamp = timestamp;
+  database.insert(data);
+  response.json(data);
+});
+
+//app.get("/*", (req, res) => {
+  //res.redirect("/404");
+//});
 
 // Bare Server 
 server.on("request", (req, res) => {
