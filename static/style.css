@@ -128,7 +128,7 @@ button {
   font-size: 65px;
 }
 
-#gmail {
+#email {
   position: absolute;
   transform: translateX(-50%);
   top: 50%;
@@ -142,7 +142,7 @@ button {
   font-size: 25px;
 }
 
-#gmail:focus {
+#email:focus {
   border-width: 0px 0px 2px 0px;
 }
 

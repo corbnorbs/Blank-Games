@@ -10,9 +10,10 @@ function closeLogin() {
 
 async function submitLogin() {
     console.log("submit");
-    var gmail = document.getElementById("gmail").innerHTML;
-    var password = document.getElementById("password").innerHTML;
-    const data = {gmail, password};
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var reason = "get account";
+    const data = {reason, email, password};
         const options = {
           method: 'POST',
           headers: {
