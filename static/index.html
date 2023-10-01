@@ -18,12 +18,21 @@
     </script>
   </head>
   <body>
-    <!--<script src="iframed.js"></script>-->
-    <divclass="title">
-    <h1>Blank Games</h1>
-    </div>
+    <div id="container">
+      <!--<script src="iframed.js"></script>-->
+      <div class="title">
+      <h1>Blank Games</h1>
+      </div>
+
+      <div id="login-button" onclick="login()">Log in</div>
+
+      <script src="scripts/login.js"></script>
+      
+      <div id="game-holder" class="grid">
+        <button class="grid-item" onclick = "search('https://blank-games.glitch.me/suggest-a-game')">Suggest A Game</button>
+        <button class="grid-item" onclick = "search('https://blank-games.glitch.me/new-link');">Get New Unblocked Links</button>
+      </div>
     
-    <div id="game-holder" class="grid">
     </div>
 
     <script src="scripts/index.js"></script>
@@ -36,7 +45,7 @@
       let newGame = document.createElement("button");
       newGame.classList.add("grid-item");
       newGame.innerHTML = Object.keys(games)[i];
-      newGame.onclick = function() {search(obj);}
+      newGame.onclick = search(obj);
       document.getElementById("game-holder").appendChild(newGame);
     }
     </script>
