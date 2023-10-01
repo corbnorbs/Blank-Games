@@ -20,11 +20,18 @@
   <body>
     <div id="container">
       <!--<script src="iframed.js"></script>-->
-      <div class="title">
-      <h1>Blank Games</h1>
+      <div id="title-holder">
+      <h1 id="title">Blank Games</h1>
       </div>
 
-      <div id="login-button" onclick="login()">Log in</div>
+      <div id="login-holder">
+        <h1 id="login-title">Login</h1>
+        <input id="gmail" placeholder="Gmail">
+        <input id="password" type="password" placeholder="Password">
+        <button onclick="submitLogin()">Submit</button>
+      </div>
+
+      <div id="login-button" onclick="openLogin()">Log in</div>
 
       <script src="scripts/login.js"></script>
       

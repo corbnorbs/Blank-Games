@@ -13,18 +13,27 @@ body,html {
   margin: 0;
 }
 
+.blur div:not(#login-holder) {
+  filter: blur(10px);
+}
+
 button {
   background-color: lightgrey;
   border: 1px solid white;
   user-select: none;
 }
 
-.title {
+#title-holder {
+  position: absolute;
+  top: 160px;
+  width: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0px;
   user-select: none;
 }
 
-h1 {
+#title {
   font-style: bold;
   font-size: 100px;
   font-family: 'Lexend', sans-serif;
@@ -73,11 +82,6 @@ h1 {
   flex-basis:100%;
 }
 
-.adsbygoogle {
-  flex-basis: 100%;
-}
-
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -90,8 +94,8 @@ h1 {
   top: 2%;
   right: 1%;
   font-family: 'Lexend', sans-serif;
+  font-size: 20px;
   color: white;
-  border: 2px solid white;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -99,21 +103,63 @@ h1 {
   user-select: none;
 }
 
-#login-button:hover {
-  background-color: #FFFFFF80;
-}
-
-#login-button:active {
-  background-color: #FFFFFFA0;
-}
-
 #login-holder {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20vw;
-  height: 60vh;
-  background-color: white;
+  width: 400px;
+  height: 500px;
+  background-color: black;
   z-index: 20;
+  border: 3px solid white;
+  border-radius: 20px;
+  font-family: "Lexend", sans-serif;
+  color: white;
+  transition: 1s;
+}
+
+#login-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  font-size: 65px;
+}
+
+#gmail {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 50%;
+  width: 75%;
+  background-color: black;
+  outline: none;
+  border: 2px solid white;
+  border-width: 0px 0px 0px 0px;
+  color: white;
+  font-family: "Lexend", sans-serif;
+  font-size: 25px;
+}
+
+#gmail:focus {
+  border-width: 0px 0px 2px 0px;
+}
+
+#password {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 65%;
+  width: 75%;
+  background-color: black;
+  outline: none;
+  border: 2px solid white;
+  border-width: 0px 0px 0px 0px;
+  color: white;
+  font-family: "Lexend", sans-serif;
+  font-size: 25px;
+}
+
+#password:focus {
+  border-width: 0px 0px 2px 0px;
 }
