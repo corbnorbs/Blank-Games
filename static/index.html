@@ -45,7 +45,7 @@
       let newGame = document.createElement("button");
       newGame.classList.add("grid-item");
       newGame.innerHTML = Object.keys(games)[i];
-      newGame.onclick = search(obj);
+      newGame.onclick = function () {search(obj)}
       document.getElementById("game-holder").appendChild(newGame);
     }
     </script>
