@@ -1,5 +1,5 @@
-console.log(Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' }));
-if(Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' }) != undefined) {
+console.log(Cookies.get('UUID'));
+if(Cookies.get('UUID') != undefined) {
   login();
 }
 
@@ -17,9 +17,9 @@ function closeLogin() {
 
 async function logout() {
   console.log("LOGGING OUT");
-  if(Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' }) != undefined) {
+  if(Cookies.get('UUID') != undefined) {
     var reason = "remove UUID";
-    var myUUID = Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' });
+    var myUUID = Cookies.get('UUID');
     const data = {reason, myUUID};
     const options = {
       method: 'POST',
@@ -29,7 +29,7 @@ async function logout() {
       body:  JSON.stringify(data)
     }
     const response = await fetch('https://blank-games-database.glitch.me/api', options);
-    Cookies.remove('UUID', { domain: 'https://blank-games.onrender.com/' });
+    Cookies.remove('UUID');
     document.getElementById("login-button").innerHTML = "Log in";
     document.getElementById("login-button").onclick = function() {login();};
     document.getElementById("search-form").style.display = "none";
@@ -38,9 +38,9 @@ async function logout() {
 
 async function login() {
   console.log("LOGGING IN");
-  if(Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' }) != undefined) {
+  if(Cookies.get('UUID') != undefined) {
     var reason = "check UUID";
-    var myUUID = Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' });
+    var myUUID = Cookies.get('UUID');
     const data = {reason, myUUID};
     const options = {
       method: 'POST',
@@ -81,8 +81,8 @@ async function submitLogin() {
         if (json.isAccount == false) {
           document.getElementById("login-warning").style.display = "block";
         } else {
-          Cookies.set('UUID', json.newUUID, { domain: 'https://blank-games.onrender.com/' });
-          console.log("UUID Cookie: ", Cookies.get('UUID', { domain: 'https://blank-games.onrender.com/' }));
+          Cookies.set('UUID', json.newUUID);
+          console.log("UUID Cookie: ", Cookies.get('UUID'));
           closeLogin();
           login();
           document.getElementById("login-button").innerHTML = "Log out";
