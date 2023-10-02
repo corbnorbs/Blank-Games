@@ -33,6 +33,7 @@ async function submitLogin() {
           document.getElementById("login-warning").style.display = "block";
         } else {
           Cookies.set('UUID', json.newUUID);
+          console.log("UUID Cookie: ", Cookies.get('UUID'));
           closeLogin();
         }
 }
