@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 
 form.addEventListener("submit", async (event) => {
+  console.log(input.value);
   event.preventDefault();
   window.navigator.serviceWorker
     .register("./sw.js", {
