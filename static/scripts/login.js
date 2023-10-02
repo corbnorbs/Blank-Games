@@ -29,7 +29,6 @@ async function logout() {
       body:  JSON.stringify(data)
     }
     const response = await fetch('https://blank-games-database.glitch.me/api', options);
-    const json = await response.json();
     console.log(json);
     Cookies.remove('UUID');
     document.getElementById("login-button").innerHTML = "Log in";
