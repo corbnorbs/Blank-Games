@@ -12,14 +12,14 @@ body {
   font-family: "varela round", sans-serif;
   height: 100%;
   width: 100%;
-  background-color: black;
-  color: #FCFCFD;
+  background-color: #1F1F23;
+  color: #16B7D4;
   margin: 0%;
 }
 
 .holder {
   position: absolute;
-  background-color: #000000;
+  background-color: #1F1F23;
   color: #000000;
   width: 100vw;
   height: 40px;
@@ -32,16 +32,17 @@ body {
 }
 
 .tab {
-  color: #FCFCFD;
+  color: #16B7D4;
   position: relative;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   height: 38px;
   width: 200px;
   user-select: none;
-  border: 2px solid #000000;
+  border: 2px solid #1F1F23;
   border-width: 2px 2px 0px 2px;
   transition: 0.5s;
+  background-color: #1F1F23;
 }
 
 .frame {
@@ -53,7 +54,7 @@ body {
   background-color: #17171A;
   display: block;
   background: black;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #16B7D4;
   border-width: 2px 0px 0px 0px;
 }
 
@@ -80,8 +81,9 @@ body {
 }
 
 .selected {
-  border-color: #FFFFFF;
+  border-color: #16B7D4;
   box-shadow: 0px 0px 10px #17171A;
+  background-color: #131415;
 }
 
 .fa-x {

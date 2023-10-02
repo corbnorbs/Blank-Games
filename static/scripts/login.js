@@ -67,7 +67,7 @@ async function submitLogin() {
     console.log("submit");
     var email = document.getElementById("email-input").value;
     var password = document.getElementById("password-input").value;
-    var reason = "get account";
+    var reason = "check account";
     const data = {reason, email, password};
         const options = {
           method: 'POST',
