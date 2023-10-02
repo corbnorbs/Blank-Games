@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 html {
   background-color: black;
@@ -8,7 +9,7 @@ html {
 
 body {
   position: absolute;
-  font-family: "Lexend", sans-serif;
+  font-family: "varela round", sans-serif;
   height: 100%;
   width: 100%;
   background-color: black;
@@ -68,25 +69,14 @@ body {
   left: 10%;
 }
 
-.newTab {
-  width: 25px;
-  height: 25px;
-  color: white;
-  margin-left: 10px;
-  border-radius: 100%;
-  transition: 0.5s;
-  user-select: none;
-}
-
-.newTab:hover {
-  background-color: #FFFFFF20;
-}
-
-path {
+#newTab {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+#newTab:hover {
+  transform: scale(1.2);
 }
 
 .selected {
@@ -94,15 +84,17 @@ path {
   box-shadow: 0px 0px 10px #17171A;
 }
 
-.close {
+.fa-x {
   position: absolute;
   top: 50%;
-  left: 85%;
   transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
-  border-radius: 20px;
+  right: 10px;
   transition: 0.5s;
+  background-color: transparent;
+}
+
+.fa-x:hover {
+  transform: translateY(-50%) scale(1.2);
 }
 
 .close:hover {
@@ -112,7 +104,7 @@ path {
 .newTabText {
   position: relative;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "varela round", sans-serif;
   top: 0;
   width: fit-content;
   left: 50%;
@@ -123,7 +115,7 @@ path {
 .closeText {
   position: relative;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "varela round", sans-serif;
   left: 25%;
 }
 

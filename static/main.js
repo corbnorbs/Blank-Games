@@ -27,14 +27,10 @@ function addTab(title, url) {
     frame.id = "frame-" + id;
     frame.addEventListener("load", loaded);
     tab.appendChild(frame);
-    var close = document.createElement("div");
-    close.classList.add("close");
+    var close = document.createElement("i");
+    close.classList.add("fa-solid");
+    close.classList.add("fa-x");
     close.id = "close-" + id;
-    var closeText = document.createElement("h3");
-    closeText.innerHTML = "X";
-    closeText.id = "h3-" + id;
-    closeText.classList.add("closeText");
-    close.appendChild(closeText);
     tab.appendChild(close);
     tab.addEventListener("click", tabPressed);
     holder.insertBefore(tab, holder.children[holder.childElementCount - 1]);

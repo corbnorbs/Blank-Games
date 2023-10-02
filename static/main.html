@@ -6,23 +6,22 @@
   <meta name="viewport" content="width=device-width">
   <title>Blank</title>
   <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <script src="iframed.js"></script>
+  <script src="https://kit.fontawesome.com/b4169c8082.js" crossorigin="anonymous"></script>
+  <div id="container">
+  <div id="login-button" onclick="openLogin()">Log in</div>
   <div id="holder" class="holder">
     <div id="tab-1" class="tab selected" onclick="console.log('Clicked!')">
       <div id="text-1" class="text" title="New Tab">New Tab</div>
       <iframe class="frame" id="frame-1" allowfullscreen src="https://interstellar-5ugi.onrender.com/" onload="setTitle()"></iframe>
-      <div id="close-1" class="close">
-        <h3 class="closeText" id="h3-1">X</h3>
-      </div>
+      <i id="close-1" class="fa-solid fa-x" style="color: #ffffff;"></i>
     </div>
-    <div id="newTab" onclick="addTab('New Tab', 'https://interstellar-5ugi.onrender.com/')" class="newTab">
-      <h2 class="newTabText">+</h2>
-    </div>
+      <i id="newTab" onclick="addTab('New Tab', 'https://interstellar-5ugi.onrender.com/')" class="fa-solid fa-plus fa-lg" style="color: #ffffff;"></i>
   </div>
-  <h1 id="test" class="Name"></h1>
+</div>
   <script src="main.js"></script>
 </body>
 </html>

@@ -1,26 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Oxygen+Mono&family=Quicksand:wght@700&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 body,html {
-  text-align: center;
-  background-color: black;
-}
-
-#container {
-  width: fit-content;
-  height: fit-content;
-  padding: 0;
   margin: 0;
-}
-
-.blur div:not(#login-holder) {
-  filter: blur(10px);
-}
-
-button {
-  background-color: lightgrey;
-  border: 1px solid white;
-  user-select: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(#131415, #0d363d);
+  background-attachment: fixed; 
+  font-family: "varela round", sans-serif;
 }
 
 #title-holder {
@@ -34,20 +23,20 @@ button {
 }
 
 #title {
+  position: absolute;
   font-style: bold;
   font-size: 100px;
-  font-family: 'Lexend', sans-serif;
-  color: white;
+  color: #16B7D4;
+  text-shadow: 0px 0px 10px #131415;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  position: absolute;
   margin-bottom: 0px;
   user-select: none;
 }
 
 .grid {
-  width: 50%;
+  width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,23 +48,25 @@ button {
   gap:5px;
 }
 
-.adsbygoogle {
-  flex-basis:100%;
-}
-
 .grid-item {
   border-radius: 5px;
-  height: 100px;
+  height: 200px;
   font-size: 25px;
-  font-family: 'Lexend', sans-serif;
   font-style: bold;
   transition: 0.5s;
-  flex: 45%;
+  flex: 20%;
+  box-shadow: 0px 0px 10px #131415;
+  background-color: #131415;
+  border: none;
+  color: #16B7D4;
+  user-select: none;
+  text-shadow: 0px 0px 10px #145a66;
 }
 
 .grid-item:hover {
-  border-radius: 2px;
-  background-color: white;
+  background-color: #145A66;
+  color: #1A1A1F;
+  text-shadow: 0px 0px 10px #061e22;
 }
 
 .grid-item:first-child, .grid-item:nth-child(2) {
@@ -84,82 +75,4 @@ button {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-#login-button {
-  position: fixed;
-  display: flex;
-  width: 100px;
-  height: 25px;
-  top: 2%;
-  right: 1%;
-  font-family: 'Lexend', sans-serif;
-  font-size: 20px;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  transition: hover 0.5s;
-  user-select: none;
-}
-
-#login-holder {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 500px;
-  background-color: black;
-  z-index: 20;
-  border: 3px solid white;
-  border-radius: 20px;
-  font-family: "Lexend", sans-serif;
-  color: white;
-  transition: 1s;
-}
-
-#login-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 10%;
-  font-size: 65px;
-}
-
-#email {
-  position: absolute;
-  transform: translateX(-50%);
-  top: 50%;
-  width: 75%;
-  background-color: black;
-  outline: none;
-  border: 2px solid white;
-  border-width: 0px 0px 0px 0px;
-  color: white;
-  font-family: "Lexend", sans-serif;
-  font-size: 25px;
-}
-
-#email:focus {
-  border-width: 0px 0px 2px 0px;
-}
-
-#password {
-  position: absolute;
-  transform: translateX(-50%);
-  top: 65%;
-  width: 75%;
-  background-color: black;
-  outline: none;
-  border: 2px solid white;
-  border-width: 0px 0px 0px 0px;
-  color: white;
-  font-family: "Lexend", sans-serif;
-  font-size: 25px;
-}
-
-#password:focus {
-  border-width: 0px 0px 2px 0px;
 }
