@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const input = document.querySelector("input");
+const input = document.getElementById("search");
 
 form.addEventListener("submit", async (event) => {
   console.log(input.value);
