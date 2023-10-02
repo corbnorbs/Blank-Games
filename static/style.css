@@ -20,6 +20,7 @@ body,html {
   transform: translateX(-50%);
   margin: 0px;
   user-select: none;
+  text-wrap: nowrap;
 }
 
 #title {
@@ -75,4 +76,45 @@ body,html {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+#search {
+  position: absolute;
+  top: 350px;
+  transform: translateX(-50%);
+  padding: 5px;
+  width: 25%;
+  height: 40px;
+  margin-top: 100px;
+  border-bottom: 2px solid #16B7D4;
+  margin-top: 100px;
+  transition: 0.25s;
+} 
+
+#search:hover {
+  width: 30%;
+}
+
+#search>input {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-45%);
+  left: 40px;
+  width: 75%;
+  background-color: transparent;
+  border: none;
+  font-size: 35px;
+  outline: none;
+  color: #16B7D4;
+  font-family: "varela round", sans-serif;
+}
+
+#search>i {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+}
+
+#search>i:hover {
+  transform: scale(1.1);
 }

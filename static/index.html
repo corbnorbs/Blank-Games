@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">  
     <link rel="stylesheet" href="login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +42,10 @@
       <div id="title-holder">
       <h1 id="title">Blank Games</h1>
       </div>
+
+      <form id="search-form"style="display: none;">
+        <span id="search"><input id="search-input" placeholder="Search the web freely"><i onclick="search(document.getElementById('search-input').value)"class="fa-solid fa-magnifying-glass fa-lg" style="color: #00d9ff;"></i></span>
+      </form>
       
       <div id="game-holder" class="grid">
         <button class="grid-item" onclick = "search('https://blank-games.glitch.me/suggest-a-game')">Suggest A Game</button>
