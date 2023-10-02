@@ -1,6 +1,6 @@
 console.log(Cookies.get('UUID'));
-if(Cookies.get('UUID')) {
-  
+if(Cookies.get('UUID') != undefined) {
+  Login();
 }
 
 function openLogin() {
