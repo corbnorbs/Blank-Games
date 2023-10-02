@@ -19,7 +19,7 @@ body {
 
 .holder {
   position: absolute;
-  background-color: #1F1F23;
+  background-color: #131415;
   color: #000000;
   width: 100vw;
   height: 40px;
@@ -39,10 +39,15 @@ body {
   height: 38px;
   width: 200px;
   user-select: none;
-  border: 2px solid #1F1F23;
+  border: 2px solid #131415;
   border-width: 2px 2px 0px 2px;
   transition: 0.5s;
-  background-color: #1F1F23;
+  background-color: #131415;
+}
+
+.tab[data-selected="false"]:hover {
+  background-color: #1e1f22;
+  border-color: #1e1f22;
 }
 
 .frame {
@@ -80,10 +85,10 @@ body {
   transform: scale(1.2);
 }
 
-.selected {
+.tab[data-selected="true"] {
   border-color: #16B7D4;
   box-shadow: 0px 0px 10px #17171A;
-  background-color: #131415;
+  background-color: #1F1F23;
 }
 
 .fa-x {

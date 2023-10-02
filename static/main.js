@@ -13,6 +13,7 @@ function addTab(title, url) {
     }
     var tab = document.createElement("div");
     tab.classList.add("tab");
+    tab.setAttribute("data-selected", "false");
     tab.title = title;
     tab.id = "tab-" + id;
     var text = document.createElement("div");
@@ -62,7 +63,7 @@ const tabPressed = e => {
           } else {
             selected = holder.children[1].id;
           }
-          document.getElementById(selected).classList.add("selected");
+          document.getElementById(selected).setAttribute("data-selected", "true");
           document.getElementById(selected).children[1].style.display = "block";
         }
         tabs.splice(tabs.indexOf(myID), 1);
@@ -100,12 +101,12 @@ document.getElementById('frame-1').addEventListener("load", loaded);
 function setSelected(id) {
   var currentTab = document.getElementById(id);
   if (holder.querySelector("#" + selected)) {
-    document.getElementById(selected).classList.remove("selected");
+    document.getElementById(selected).setAttribute("data-selected", "false");
     document.getElementById(selected).children[1].style.display = "none";
     document.getElementById(selected).style.zIndex = 0;
   }
   selected = id;
-  document.getElementById(selected).classList.add("selected");
+  document.getElementById(selected).setAttribute("data-selected", "true");
   document.getElementById(selected).children[1].style.display = "block";
   document.getElementById(selected).style.zIndex = 10;
 }
