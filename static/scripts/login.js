@@ -85,5 +85,8 @@ async function submitLogin() {
           console.log("UUID Cookie: ", Cookies.get('UUID'));
           closeLogin();
           login();
+          document.getElementById("login-button").innerHTML = "Log out";
+          document.getElementById("login-button").onclick = function() {logout();};
+          document.getElementById("search-form").style.display = "block";
         }
 }
