@@ -30,10 +30,12 @@ async function logout() {
       body:  JSON.stringify(data)
     }
     const response = await fetch('https://blank-games-database.glitch.me/api', options);
+    const json = await response.json();
     Cookies.remove('UUID', cookieData);
-    document.getElementById("login-button").innerHTML = "Log in";
-    document.getElementById("login-button").onclick = function() {login();};
-    document.getElementById("search-form").style.display = "none";
+    console.log("changed");
+    document.getElementById("login-button").innerHTML = "Log out";
+    document.getElementById("login-button").onclick = function() {logout();};
+    document.getElementById("search-form").style.display = "block";
   }
 }
 
@@ -57,6 +59,8 @@ async function login() {
       document.getElementById("login-button").innerHTML = "Log out";
       document.getElementById("login-button").onclick = function() {logout();};
       document.getElementById("search-form").style.display = "block";
+    } else {
+      Cookies.remove('UUID', cookieData);
     }
   }
 }
