@@ -1,4 +1,5 @@
-console.log(Cookies.get('UUID'));
+var cookieData = {sameSite: 'None', secure: true};
+console.log(Cookies.get('UUID', cookieData));
 if(Cookies.get('UUID') != undefined) {
   login();
 }
@@ -17,9 +18,9 @@ function closeLogin() {
 
 async function logout() {
   console.log("LOGGING OUT");
-  if(Cookies.get('UUID') != undefined) {
+  if(Cookies.get('UUID', cookieData) != undefined) {
     var reason = "remove UUID";
-    var myUUID = Cookies.get('UUID');
+    var myUUID = Cookies.get('UUID', cookieData);
     const data = {reason, myUUID};
     const options = {
       method: 'POST',
@@ -29,7 +30,7 @@ async function logout() {
       body:  JSON.stringify(data)
     }
     const response = await fetch('https://blank-games-database.glitch.me/api', options);
-    Cookies.remove('UUID');
+    Cookies.remove('UUID', cookieData);
     document.getElementById("login-button").innerHTML = "Log in";
     document.getElementById("login-button").onclick = function() {login();};
     document.getElementById("search-form").style.display = "none";
@@ -38,9 +39,9 @@ async function logout() {
 
 async function login() {
   console.log("LOGGING IN");
-  if(Cookies.get('UUID') != undefined) {
+  if(Cookies.get('UUID', cookieData) != undefined) {
     var reason = "check UUID";
-    var myUUID = Cookies.get('UUID');
+    var myUUID = Cookies.get('UUID', cookieData);
     const data = {reason, myUUID};
     const options = {
       method: 'POST',
@@ -81,8 +82,8 @@ async function submitLogin() {
         if (json.isAccount == false) {
           document.getElementById("login-warning").style.display = "block";
         } else {
-          Cookies.set('UUID', json.newUUID);
-          console.log("UUID Cookie: ", Cookies.get('UUID'));
+          Cookies.set('UUID', json.newUUID, cookieData);
+          console.log("UUID Cookie: ", Cookies.get('UUID', cookieData));
           closeLogin();
           login();
           document.getElementById("login-button").innerHTML = "Log out";
