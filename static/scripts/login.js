@@ -18,7 +18,7 @@ function closeLogin() {
 
 async function logout() {
   console.log("LOGGING OUT");
-  if(Cookies.get('UUID', cookieData) != undefined) {
+  if (Cookies.get('UUID', cookieData) != undefined) {
     var reason = "remove UUID";
     var myUUID = Cookies.get('UUID', cookieData);
     const data = {reason, myUUID};
@@ -30,6 +30,7 @@ async function logout() {
       body:  JSON.stringify(data)
     }
     const response = await fetch('https://blank-games-database.glitch.me/api', options);
+    console.log("done");
     const json = await response.json();
     Cookies.remove('UUID', cookieData);
     console.log("changed");
