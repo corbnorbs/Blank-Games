@@ -116,10 +116,10 @@ function setSelected(id) {
   document.getElementById(selected).style.zIndex = 10;
 }
 
-//function moveHistory(direction) {
-  //if(direction == "forward") {
-    //document.getElementById(selected).children[1].contentWindow.history.forward();
-  //} else if (direction == "back") {
-   //document.getElementById(selected).children[1].contentWindow.history.back();
-  //}
-//}
+function moveHistory(direction) {
+  if(direction == "forward") {
+    document.getElementById(selected).children[1].contentWindow.history.forward();
+  } else if (direction == "back") {
+   document.getElementById(selected).children[1].contentWindow.history.back();
+  }
+}
