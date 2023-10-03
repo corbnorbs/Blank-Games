@@ -34,9 +34,9 @@ async function logout() {
     const json = await response.json();
     Cookies.remove('UUID', cookieData);
     console.log("changed");
-    document.getElementById("login-button").innerHTML = "Log out";
-    document.getElementById("login-button").onclick = function() {logout();};
-    document.getElementById("search-form").style.display = "block";
+    document.getElementById("login-button").innerHTML = "Log in";
+    document.getElementById("login-button").onclick = function() {login();};
+    document.getElementById("search-form").style.display = "none";
   }
 }
 
