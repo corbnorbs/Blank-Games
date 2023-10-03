@@ -35,7 +35,7 @@ async function logout() {
     Cookies.remove('UUID', cookieData);
     console.log("changed");
     document.getElementById("login-button").innerHTML = "Log in";
-    document.getElementById("login-button").onclick = function() {login();};
+    document.getElementById("login-button").onclick = function() {openLogin();};
     document.getElementById("search-form").style.display = "none";
   }
 }
