@@ -118,8 +118,8 @@ function setSelected(id) {
 
 function moveHistory(direction) {
   if(direction == "forward") {
-    document.getElementById(selected).children[1].contentWindow.history.forward();
+    document.getElementById(selected).children[1].contentDocument.history.forward();
   } else if (direction == "back") {
-   document.getElementById(selected).children[1].contentWindow.history.back();
+   document.getElementById(selected).children[1].contentDocument.history.back();
   }
 }
