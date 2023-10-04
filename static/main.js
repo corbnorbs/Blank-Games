@@ -4,10 +4,13 @@ tabs.push("tab-1");
 let buttons = document.getElementsByTagName("tab");
 var holder = document.getElementById("holder");
 let myID;
+$("#frame-1").data('history', {history: [], pos: 0});
+console.log($("#frame-1").data('history'));
 
 function addTab(title, url) {
   if (holder.childElementCount < 19) {
     var id = parseInt(tabs[tabs.length - 1].split("-")[1]) + 1;
+    console.log(id);
     while (holder.querySelector("#tab-" + id)) {
       id++;
     }
@@ -36,6 +39,8 @@ function addTab(title, url) {
     tab.appendChild(close);
     tab.addEventListener("click", tabPressed);
     holder.insertBefore(tab, holder.children[holder.childElementCount - 1]);
+    $("#frame-" + id).data('history', {history: [], pos: 0});
+    console.log($("#frame-" + id).data('history'));
     if (holder.childElementCount >= 19) {
       document.getElementById("newTab").style.display = "none";
     }
@@ -88,7 +93,7 @@ const tabPressed = e => {
 }
 
 function setTitle() {
-  console.log("frame-" + selected);
+  console.log(selected);
   document.title = document.getElementById(selected).children[1].contentDocument.title;
 }
 
@@ -96,9 +101,14 @@ let first = document.getElementById('tab-1');
 first.addEventListener("click", tabPressed);
 
 const loaded = e => {
+  id = selected.split("-")[1];
+  historyData = $("#frame-" + id).data('history');
+  console.log(historyData);
+  console.log(document.getElementById(selected).children[0].src);
+  historyData.history.push(document.getElementById(selected).children[0].src);
+  console.log(historyData);
   document.getElementById(selected).children[0].innerHTML = document.getElementById(selected).children[1].contentDocument.title;
   document.getElementById(selected).children[0].title = document.getElementById(selected).children[1].contentDocument.title;
-  
 }
 
 document.getElementById('frame-1').addEventListener("load", loaded);
@@ -117,13 +127,15 @@ function setSelected(id) {
 }
 
 function moveHistory(direction) {
-  selectedHistory = document.getElementById(selected);
+  var historyId = "#" + document.getElementById(selected).children[1].id;
+  console.log(historyId);
+  var history = $(historyId).data('history');
+  console.log($("frame-1").data());
+  console.log(history);
   if(direction == "forward") {
-    console.log(selectedHistory.children[1].contentWindow.history);
-    selectedHistory.children[1].contentWindow.history.forward();
+    console.log("FORWARD");
   } else if (direction == "back") {
-    console.log(selectedHistory.children[1].contentWindow.history);
-    selectedHistory.children[1].contentWindow.history.back();
+    console.log("BACKWARD");
   }
 }
 

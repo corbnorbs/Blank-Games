@@ -7,6 +7,7 @@
     <title>Blank</title>
     <link href="main.css" rel="stylesheet" type="text/css" />
     <link href="login.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
 
   <body>
@@ -18,7 +19,7 @@
     
       <div id="tab-1" data-selected="true" class="tab selected" onclick="console.log('Clicked!')">
         <div id="text-1" class="text" title="New Tab">New Tab</div>
-        <iframe class="frame" id="frame-1" allowfullscreen src="https://blank-games.onrender.com/" onload="setTitle()"></iframe>
+        <iframe class="frame" id="frame-1" allowfullscreen src="https://blank-games.onrender.com/"></iframe>
         <i id="close-1" class="close fa-solid fa-x" style="color: #16B7D4;"></i>
       </div>
         <i id="newTab" onclick="addTab('New Tab', 'https://blank-games.onrender.com/')" class="fa-solid fa-plus fa-lg" style="color: #16B7D4;"></i>
