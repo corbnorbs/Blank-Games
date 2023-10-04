@@ -103,12 +103,20 @@ first.addEventListener("click", tabPressed);
 const loaded = e => {
   id = selected.split("-")[1];
   historyData = $("#frame-" + id).data('history');
-  console.log(historyData);
-  console.log(document.getElementById(selected).children[0].src);
-  historyData.history.push(document.getElementById(selected).children[0].src);
-  console.log(historyData);
-  document.getElementById(selected).children[0].innerHTML = document.getElementById(selected).children[1].contentDocument.title;
-  document.getElementById(selected).children[0].title = document.getElementById(selected).children[1].contentDocument.title;
+  console.log(document.getElementById(selected).children[1].src);
+  if (historyData.pos != historyData.history.length) {
+    historyData.history.splice(historyData.pos + 1, array.length - (historyData.pos + 1));
+    historyData.history.push(document.getElementById(selected).children[1].src); 
+    historyData.pos = historyData.pos + 1;
+    document.getElementById(selected).children[1].src = historyData.history[historyData.pos];
+  } else {
+    historyData.history.push(document.getElementById(selected).children[1].src);
+    historyData.pos = 1;
+  }
+  $("#frame-" + id).data('history', historyData);
+  console.log(historyData.pos);
+  //document.getElementById(selected).children[0].innerHTML = document.getElementById(selected).children[1].contentDocument.title;
+  //document.getElementById(selected).children[0].title = document.getElementById(selected).children[1].contentDocument.title;
 }
 
 document.getElementById('frame-1').addEventListener("load", loaded);
@@ -127,14 +135,18 @@ function setSelected(id) {
 }
 
 function moveHistory(direction) {
-  var historyId = "#" + document.getElementById(selected).children[1].id;
-  console.log(historyId);
-  var history = $(historyId).data('history');
-  console.log($("frame-1").data());
-  console.log(history);
+  id = selected.split("-")[1];
+  historyData = $("#frame-" + id).data('history');
   if(direction == "forward") {
-    console.log("FORWARD");
+    if(historyData.pos != hostoryData.history.length) {
+      historyData.pos += 1;
+      document.getElementById(id).src = historyData.history[historyData.pos];
+    }
   } else if (direction == "back") {
+    if(historyData.pos != 0) {
+      historyData.pos -= 1;
+      document.getElementById(id).src = historyData.history[historyData.pos];
+    }
     console.log("BACKWARD");
   }
 }
