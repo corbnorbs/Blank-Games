@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Blank</title>
-  <link href="main.css" rel="stylesheet" type="text/css" />
-  <link href="login.css" rel="stylesheet" type="text/css" />
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Blank</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="login.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<body>
-  <script src="https://kit.fontawesome.com/b4169c8082.js" crossorigin="anonymous"></script>
-  <div id="container">
-  <div id="holder" class="holder">
-    <span id="icons-navigate"><i class="fa-solid fa-arrow-left" onclick="moveHistory('back');"></i><i class="fa-solid fa-arrow-right" onclick="moveHistory('forward');"></i></span>
-    <span id="icons-frame"><i class="fa-solid fa-expand"></i><i class="fa-solid fa-rotate-right"></i></span>
-  
-    <div id="tab-1" data-selected="true" class="tab selected" onclick="console.log('Clicked!')">
-      <div id="text-1" class="text" title="New Tab">New Tab</div>
-      <iframe class="frame" id="frame-1" allowfullscreen src="https://blank-games.onrender.com/" onload="setTitle()"></iframe>
-      <i id="close-1" class="close fa-solid fa-x" style="color: #16B7D4;"></i>
+  <body>
+    <script src="https://kit.fontawesome.com/b4169c8082.js" crossorigin="anonymous"></script>
+    <div id="container">
+    <div id="holder" class="holder">
+      <span id="icons-navigate"><i class="fa-solid fa-arrow-left" onclick="moveHistory('back');"></i><i class="fa-solid fa-arrow-right" onclick="moveHistory('forward');"></i></span>
+      <span id="icons-frame"><i class="fa-solid fa-expand"></i><i class="fa-solid fa-rotate-right"></i></span>
+    
+      <div id="tab-1" data-selected="true" class="tab selected" onclick="console.log('Clicked!')">
+        <div id="text-1" class="text" title="New Tab">New Tab</div>
+        <iframe class="frame" id="frame-1" allowfullscreen src="https://blank-games.onrender.com/" onload="setTitle()"></iframe>
+        <i id="close-1" class="close fa-solid fa-x" style="color: #16B7D4;"></i>
+      </div>
+        <i id="newTab" onclick="addTab('New Tab', 'https://blank-games.onrender.com/')" class="fa-solid fa-plus fa-lg" style="color: #16B7D4;"></i>
     </div>
-      <i id="newTab" onclick="addTab('New Tab', 'https://blank-games.onrender.com/')" class="fa-solid fa-plus fa-lg" style="color: #16B7D4;"></i>
   </div>
-</div>
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

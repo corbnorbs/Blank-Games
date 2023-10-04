@@ -117,9 +117,12 @@ function setSelected(id) {
 }
 
 function moveHistory(direction) {
+  selectedHistory = document.getElementById(selected);
   if(direction == "forward") {
-    document.getElementById(selected).children[1].contentWindow.history.forward();
+    console.log(selectedHistory.children[1].contentWindow.history);
+    selectedHistory.children[1].contentWindow.history.forward();
   } else if (direction == "back") {
-   document.getElementById(selected).children[1].contentWindow.history.back();
+    console.log(selectedHistory.children[1].contentWindow.history);
+    selectedHistory.children[1].contentWindow.history.back();
   }
 }
