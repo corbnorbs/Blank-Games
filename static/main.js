@@ -24,7 +24,7 @@ function addTab(title, url) {
     var frame = document.createElement("iframe");
     frame.classList.add("frame");
     frame.src = url;
-    frame.allowfullscreen = true;
+    frame.setAttribute('allowFullScreen', '');
     frame.id = "frame-" + id;
     frame.addEventListener("load", loaded);
     tab.appendChild(frame);
@@ -128,5 +128,15 @@ function moveHistory(direction) {
 }
 
 function reloadFrame() {
-  document.getElementById(selected).children[1].contentWindow.location.reload();
+  console.log("RELOAD");
+  document.getElementById(selected).children[1].contentWindow.location.reload(true);
+}
+
+function setFullscreen(open) {
+  console.log("FULLSCREEN");
+  console.log(open);
+  console.log(document.webkitIsFullScreen);
+  if (open) {
+    document.getElementById(selected).children[1].requestFullscreen();
+    }
 }
