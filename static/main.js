@@ -126,3 +126,7 @@ function moveHistory(direction) {
     selectedHistory.children[1].contentWindow.history.back();
   }
 }
+
+function reloadFrame() {
+  document.getElementById(selected).children[1].contentWindow.location.reload();
+}
