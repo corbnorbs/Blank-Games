@@ -28,7 +28,7 @@ games = {
     "Moto X3M": "https://www.coolmathgames.com/0-moto-x3m/play",
     "Mr. Mine": "https://www.coolmathgames.com/0-mr-mine/play",
     "OvO": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://427396048-642845057394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/ovo.xml",
-    "Paper.io 1, 2, and 3": "https://cdn.glitch.global/cb0cdc92-20f1-4922-aa24-afffa798f7cb/GumShop.jpg?v=1696024774843",
+    "Paper.io 1, 2, and 3": "https://paper-io.com/",
     "Retro Bowl": "https://retrobowl.pro/games/retro-bowl.embed",
     "Rocket Bot Royale": "https://rocketbotroyale2.winterpixel.io/",
     "Run 3": "https://www.coolmathgames.com/0-run-3/play",
