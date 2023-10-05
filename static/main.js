@@ -104,17 +104,20 @@ const loaded = e => {
   id = selected.split("-")[1];
   historyData = $("#frame-" + id).data('history');
   console.log(document.getElementById(selected).children[1].src);
-  if (historyData.pos != historyData.history.length) {
-    historyData.history.splice(historyData.pos + 1, array.length - (historyData.pos + 1));
-    historyData.history.push(document.getElementById(selected).children[1].src); 
-    historyData.pos = historyData.pos + 1;
-    document.getElementById(selected).children[1].src = historyData.history[historyData.pos];
-  } else {
-    historyData.history.push(document.getElementById(selected).children[1].src);
-    historyData.pos = 1;
+  if (historyData.history[historyData.pos - 1] != document.getElementById(selected).children[1].src) {
+    if (historyData.pos != historyData.history.length) {
+      historyData.history.splice(historyData.pos + 1, historyData.history.length - (historyData.pos + 1));
+      historyData.history.push(document.getElementById(selected).children[1].src); 
+      historyData.pos += 1;
+      document.getElementById(selected).children[1].src = historyData.history[historyData.pos];
+    } else {
+      historyData.history.push(document.getElementById(selected).children[1].src);
+      historyData.pos += 1;
+      console.log(document.getElementById(selected).children[1].src);
+    }
   }
   $("#frame-" + id).data('history', historyData);
-  console.log(historyData.pos);
+  console.log(historyData);
   //document.getElementById(selected).children[0].innerHTML = document.getElementById(selected).children[1].contentDocument.title;
   //document.getElementById(selected).children[0].title = document.getElementById(selected).children[1].contentDocument.title;
 }
@@ -138,14 +141,14 @@ function moveHistory(direction) {
   id = selected.split("-")[1];
   historyData = $("#frame-" + id).data('history');
   if(direction == "forward") {
-    if(historyData.pos != hostoryData.history.length) {
+    if(historyData.pos - 1 != historyData.history.length) {
       historyData.pos += 1;
-      document.getElementById(id).src = historyData.history[historyData.pos];
+      document.getElementById("frame-" + id).src = historyData.history[historyData.pos];
     }
   } else if (direction == "back") {
     if(historyData.pos != 0) {
       historyData.pos -= 1;
-      document.getElementById(id).src = historyData.history[historyData.pos];
+      document.getElementById("frame-" + id).src = historyData.history[historyData.pos];
     }
     console.log("BACKWARD");
   }
