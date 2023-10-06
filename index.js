@@ -21,7 +21,7 @@ app.use(cors());
 
 app.post("/getProxed", (req, res) => {
     console.log("GET SITE POST");
-    res.json({ link: req.link });
+    res.json({ link: req.body.link });
 });
 
 app.use(express.static(path.join(__dirname, "static")));
