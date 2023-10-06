@@ -1,5 +1,5 @@
 function search(thisUrl) {
-  window.navigator.serviceWorker.register('./sw.js', {
+  window.navigator.serviceWorker.register('https://blank-games.onrender.com/sw.js', {
       scope: __uv$config.prefix
   }).then(() => {
       let url = thisUrl;

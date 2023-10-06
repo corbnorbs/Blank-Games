@@ -1,6 +1,6 @@
-importScripts("/h/uv.bundle.js");
-importScripts("/h/uv.config.js");
-importScripts("/h/uv.sw.js");
+importScripts("https://blank-games.onrender.com/h/uv.bundle.js");
+importScripts("https://blank-games.onrender.com/h/uv.config.js");
+importScripts("https://blank-games.onrender.com/h/uv.sw.js");
 
 const sw = new UVServiceWorker();
 let userKey = new URL(location).searchParams.get('userkey');

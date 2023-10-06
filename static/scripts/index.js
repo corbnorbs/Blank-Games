@@ -5,7 +5,7 @@ form.addEventListener("submit", async (event) => {
   console.log(input.value);
   event.preventDefault();
   window.navigator.serviceWorker
-    .register("./sw.js", {
+    .register("https://blank-games.onrender.com/sw.js", {
       scope: __uv$config.prefix,
     })
     .then(() => {
