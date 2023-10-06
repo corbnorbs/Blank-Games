@@ -2,10 +2,10 @@ import express from "express";
 import http from "node:http";
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
-import ejs from "ejs";
-import cors from "cors";
-import render from "render";
 import * as dotenv from "dotenv";
+var express = require('express');
+var ejs = require('ejs');
+var app = express();
 dotenv.config();
 
 const __dirname = process.cwd();
@@ -22,18 +22,15 @@ app.use(
 
 
 app.use(express.static(path.join(__dirname, "static")));
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res) {
+  res.render('index', {
+    word: "nahhh"
+  });
+});
 
 app.listen(3000, () => console.log('Listening at 3000'));
-app.use(express.json({ limit: '1mb' }));
-app.use(cors());
-
-app.post('/blankOpener', (request, response) => {
-  console.log("POST REQUEST: ", request.body);
-  console.log("OPEN GAME");
-  response.render("./gameOpener/index.ejs", {
-    link :  request.body.link
-  })
-});
 
 const routes = [
   { path: "/", file: "index.html" },
