@@ -3,8 +3,7 @@ import http from "node:http";
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
-var express = require('express');
-var ejs = require('ejs');
+import ejs from "ejs";
 var app = express();
 dotenv.config();
 
