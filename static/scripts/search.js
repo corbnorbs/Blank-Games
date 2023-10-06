@@ -1,4 +1,4 @@
-export function search(thisUrl) {
+function search(thisUrl) {
   window.navigator.serviceWorker.register('./sw.js', {
       scope: __uv$config.prefix
   }).then(() => {
@@ -6,6 +6,6 @@ export function search(thisUrl) {
       if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
       else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-      return(__uv$config.prefix + __uv$config.encodeUrl(url));
+      window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
 };
