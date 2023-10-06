@@ -4,7 +4,7 @@ import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
 import cors from 'cors';
-import { search } from './scripts/search.js';
+import { search } from './static/scripts/search.js';
 dotenv.config();
 
 const __dirname = process.cwd();
