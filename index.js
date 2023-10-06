@@ -21,6 +21,7 @@ app.use(cors());
 
 app.post("/getProxed", (req, res) => {
     console.log("GET SITE POST");
+    console.log(res.body);
     res.json({ link: req.body.link });
 });
 
