@@ -8,6 +8,8 @@ app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 app.use(cors());
 
+app.set('view engine', 'ejs');
+
 app.post('/api', (request, response) => {
   console.log("POST REQUEST: ", request.body);
   if (request.body.reason == "open game") {

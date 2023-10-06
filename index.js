@@ -1,13 +1,26 @@
 import express from "express";
 import http from "node:http";
-import Datastore from 'nedb'
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
+import ejs from "ejs";
+import cors from "cors";
+import render from "render";
 import * as dotenv from "dotenv";
 dotenv.config();
+app.listen(3000, () => console.log('Listening at 3000'));
+app.use(express.static('public'));
+app.use(express.json({ limit: '1mb' }));
+app.use(cors());
 
-const database = new Datastore('database.db');
-database.loadDatabase();
+app.post('/blankOpener', (request, response) => {
+  console.log("POST REQUEST: ", request.body);
+  if (request.body.reason == "open game") {
+    console.log("OPEN GAME");
+    response.render("./gameOpener/index.hbs", {
+      link :  request.body.link
+    })
+  }
+});
 
 const __dirname = process.cwd();
 const server = http.createServer();
@@ -41,28 +54,6 @@ routes.forEach((route) => {
     res.sendFile(path.join(__dirname, "static", route.file));
   });
 });
-
-app.get('/api', (request,response) => {
-  database.find({}, (err, data) => {
-    if (err) {
-      response.end();
-      return;
-    }
-    response.json(data);
-  });
-});
-
-app.post('/api', (request, response) => {
-  const data = request.body;
-  const timestamp = Date.now();
-  data.timestamp = timestamp;
-  database.insert(data);
-  response.json(data);
-});
-
-//app.get("/*", (req, res) => {
-  //res.redirect("/404");
-//});
 
 // Bare Server 
 server.on("request", (req, res) => {
