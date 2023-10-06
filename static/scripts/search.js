@@ -1,6 +1,3 @@
-import uvBundle from "./h/uv.bundle.js";
-import uvConfig from "./h/uv.config.js";
-
 export function search(thisUrl) {
   window.navigator.serviceWorker.register('./sw.js', {
       scope: __uv$config.prefix
