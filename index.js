@@ -7,18 +7,6 @@ import cors from "cors";
 import render from "render";
 import * as dotenv from "dotenv";
 dotenv.config();
-app.listen(3000, () => console.log('Listening at 3000'));
-app.use(express.static('public'));
-app.use(express.json({ limit: '1mb' }));
-app.use(cors());
-
-app.post('/blankOpener', (request, response) => {
-  console.log("POST REQUEST: ", request.body);
-  console.log("OPEN GAME");
-  response.render("./gameOpener/index.hbs", {
-    link :  request.body.link
-  })
-});
 
 const __dirname = process.cwd();
 const server = http.createServer();
@@ -34,6 +22,18 @@ app.use(
 
 
 app.use(express.static(path.join(__dirname, "static")));
+
+app.listen(3000, () => console.log('Listening at 3000'));
+app.use(express.json({ limit: '1mb' }));
+app.use(cors());
+
+app.post('/blankOpener', (request, response) => {
+  console.log("POST REQUEST: ", request.body);
+  console.log("OPEN GAME");
+  response.render("./gameOpener/index.hbs", {
+    link :  request.body.link
+  })
+});
 
 const routes = [
   { path: "/", file: "index.html" },
