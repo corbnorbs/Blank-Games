@@ -30,7 +30,7 @@ app.use(cors());
 app.post('/blankOpener', (request, response) => {
   console.log("POST REQUEST: ", request.body);
   console.log("OPEN GAME");
-  response.render("./gameOpener/index.hbs", {
+  response.render("./gameOpener/index.ejs", {
     link :  request.body.link
   })
 });
