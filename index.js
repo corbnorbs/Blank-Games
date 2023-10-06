@@ -3,7 +3,6 @@ import http from "node:http";
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
-import ejs from "ejs";
 dotenv.config();
 
 const __dirname = process.cwd();
@@ -21,11 +20,6 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "static")));
 
-app.post('/blankOpener', function(req, res) {
-  res.render('index.ejs', {
-    word: "nahhh"
-  });
-});
 
 app.listen(3000, () => console.log('Listening at 3000'));
 
