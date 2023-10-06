@@ -4,6 +4,7 @@ import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
 import cors from 'cors';
+import { search } from './scripts/search.js';
 dotenv.config();
 
 const __dirname = process.cwd();
@@ -22,7 +23,7 @@ app.use(cors());
 app.post("/getProxed", (req, res) => {
     console.log("GET SITE POST");
     console.log(res.body);
-    res.json({ link: req.body.link });
+    res.json({ link: search(res.body.link)});
 });
 
 app.use(express.static(path.join(__dirname, "static")));
