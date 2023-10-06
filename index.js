@@ -4,7 +4,6 @@ import createBareServer from "@tomphttp/bare-server-node";
 import path from "node:path";
 import * as dotenv from "dotenv";
 import ejs from "ejs";
-var app = express();
 dotenv.config();
 
 const __dirname = process.cwd();
