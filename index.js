@@ -20,10 +20,9 @@ app.use(
 
 
 app.use(express.static(path.join(__dirname, "static")));
-app.set('view engine', 'ejs');
 
 app.post('/blankOpener', function(req, res) {
-  res.render('index', {
+  res.render('index.ejs', {
     word: "nahhh"
   });
 });
