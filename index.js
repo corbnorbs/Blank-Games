@@ -14,12 +14,10 @@ app.use(cors());
 
 app.post('/blankOpener', (request, response) => {
   console.log("POST REQUEST: ", request.body);
-  if (request.body.reason == "open game") {
-    console.log("OPEN GAME");
-    response.render("./gameOpener/index.hbs", {
-      link :  request.body.link
-    })
-  }
+  console.log("OPEN GAME");
+  response.render("./gameOpener/index.hbs", {
+    link :  request.body.link
+  })
 });
 
 const __dirname = process.cwd();
