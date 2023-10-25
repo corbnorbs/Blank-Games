@@ -1,5 +1,5 @@
 services:
   - type: web
-    name: blank-games
+    name: blankGames
     env: docker
     plan: free
