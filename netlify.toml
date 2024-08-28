@@ -1,6 +1,4 @@
-build:
-  prebuild: mkdir web-build
-  command: expo build:web
-  commandOrigin: ui
-  publish: web-build
-  publishOrigin: ui
+[build]
+  prebuild = "mkdir web-build"
+  command = "expo build:web"
+  publish = "web-build"
