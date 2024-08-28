@@ -1,4 +1,0 @@
-[build]
-  prebuild = "mkdir web-build"
-  command = "expo build:web"
-  publish = "web-build"
