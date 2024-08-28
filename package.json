@@ -16,6 +16,7 @@
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "expo": "^42.0.0",
     "@titaniumnetwork-dev/ultraviolet": "^1.0.10",
     "@tomphttp/bare-server-node": "^1.2.6",
     "express": "^4.18.2",
