@@ -1,0 +1,6 @@
+build:
+  prebuild: mkdir web-build
+  command: expo build:web
+  commandOrigin: ui
+  publish: web-build
+  publishOrigin: ui
